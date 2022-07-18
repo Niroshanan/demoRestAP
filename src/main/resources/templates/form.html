@@ -7,9 +7,12 @@
 <body>
 asd
 <form action="" th:action="@{/viewStudent}" th:object="${student}" method="post">
-    <input type="text" th:field="*{name}">
-    <input type="text"  th:field="*{studentNumber}">
-    <input type="text"  th:field="*{city}">
+    <label>First Name: </label> <input type="text" th:field="*{firstName}"> <br>
+    <label>LastName: </label> <input type="text"  th:field="*{lastName}"><br>
+    <label>Student Number: </label> <input type="text"  th:field="*{studentNumber}"><br>
+    <label>Email : </label> <input type="email" th:field="*{email}"><br>
+    <label>Mobile Number: </label> <input type="text"  th:field="*{mobileNumber}"><br>
+    <label>City: </label> <input type="text"  th:field="*{city}"><br>
     <input type="submit" name="submit">
 </form>
 </body>

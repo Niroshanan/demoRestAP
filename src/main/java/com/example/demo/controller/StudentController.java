@@ -21,17 +21,12 @@ public class StudentController {
     @Autowired
     StudentService studentService;
 
-    @GetMapping("hello")
+    @GetMapping("/hello")
     public String hello() {
-        return "Hello Niroshanan";
+        return "Hello World";
     }
 
-    @GetMapping("details")
-    public ResponseEntity<Student> details() {
-        Student student = new Student();
-        return new ResponseEntity<>(student, HttpStatus.OK);
-    }
-    @GetMapping("studentListByCity")
+    @GetMapping("/studentListByCity")
     public ResponseEntity<List<Student>> studentListByCity(@RequestParam String city) {
         return new ResponseEntity<>(studentService.getStudentByCity(city), HttpStatus.OK);
     }
@@ -42,16 +37,14 @@ public class StudentController {
         model.addAttribute("student",student);
         return "form";
     }
-    @GetMapping("studentList")
+    @GetMapping("/studentList")
     public ResponseEntity<List<Student>> studentList() {
 
         return new ResponseEntity<>(studentService.getAllStudentList(), HttpStatus.OK);
     }
     @RequestMapping("/viewStudent")
     public String viewStudent(@ModelAttribute Student student,Model model){
-        System.out.println(student.getName());
-        System.out.println(student.getCity());
-        System.out.println(student.getStudentNumber());
+        createStudent(student);
         return "view";
     }
 

@@ -5,6 +5,12 @@
     <title>Title</title>
 </head>
 <body>
-<div th:text="${student}"></div>
+<p>Insert complete</p>
+    <p th:text="${student.getFirstName()}"></p>
+    <p th:text="${student.getLastName()}"></p>
+    <p th:text="${student.getStudentNumber()}"></p>
+    <p th:text="${student.getEmail()}"></p>
+    <p th:text="${student.getMobileNumber()}"></p>
+    <p th:text="${student.getCity()}"></p>
 </body>
 </html>

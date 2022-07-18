@@ -16,23 +16,73 @@ public class Student {
     @GeneratedValue
     @Column(name = "id", nullable = false)
     private Long id;
+
     @NotNull
     @Size(max =20)
-    private String name;
+    private String firstName;
+
+    @NotNull
+    @Size(max =20)
+    private String lastName;
+
+    @NotNull
+    private String studentNumber;
     @Email
     @Size(max = 50)
     private String email;
 
     @NotBlank(message = "mobileNumber is required")
     @Size(min = 10, max = 10)
-    public String mobileNumber;
-    @NotNull
-    private String studentNumber;
+    private String mobileNumber;
     @NotNull
     private String city;
 
+    public Student() {
+    }
+
     public String getEmail() {
         return email;
+    }
+
+    public Student(String firstName, String lastName, String studentNumber, String email, String mobileNumber, String city) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.studentNumber = studentNumber;
+        this.email = email;
+        this.mobileNumber = mobileNumber;
+        this.city = city;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getStudentNumber() {
+        return studentNumber;
+    }
+
+    public void setStudentNumber(String studentNumber) {
+        this.studentNumber = studentNumber;
     }
 
     public void setEmail(String email) {
@@ -45,41 +95,6 @@ public class Student {
 
     public void setMobileNumber(String mobileNumber) {
         this.mobileNumber = mobileNumber;
-    }
-
-    public Student() {
-    }
-
-    public Student(String name, String email, String mobileNumber, String studentNumber, String city) {
-        this.name = name;
-        this.email = email;
-        this.mobileNumber = mobileNumber;
-        this.studentNumber = studentNumber;
-        this.city = city;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getStudentNumber() {
-        return studentNumber;
-    }
-
-    public void setStudentNumber(String studentNumber) {
-        this.studentNumber = studentNumber;
     }
 
     public String getCity() {
